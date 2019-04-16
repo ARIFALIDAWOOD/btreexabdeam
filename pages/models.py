@@ -24,3 +24,14 @@ class Employee(models.Model):
 
     def __str__(self):
         return self.First_name
+
+
+class About(models.Model):
+    name = models.CharField(max_length=50, blank=True)
+    display_img = models.ImageField(
+        upload_to='photos/%Y/%m/%d/', height_field=None, width_field=None, null=True)
+    ceo_img = models.ImageField(
+        upload_to='photos/%Y/%m/%d/', height_field=None, width_field=None, null=True)
+
+    def __str__(self):
+        return self.name

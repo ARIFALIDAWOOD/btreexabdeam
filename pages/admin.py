@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Employee, Carousel
+from .models import Employee, Carousel, About
 # Register your models here.
 
 
@@ -19,3 +19,4 @@ class CaroAdmin(admin.ModelAdmin):
 
 admin.site.register(Carousel, CaroAdmin)
 admin.site.register(Employee, PagesAdmin)
+admin.site.register(About)

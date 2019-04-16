@@ -33,10 +33,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
-    'ongoing.apps.OngoingConfig',
     'accounts.apps.AccountsConfig',
-    'buy.apps.BuyConfig',
-    'rental.apps.RentalConfig',
+    'listings',
     'news.apps.NewsConfig',
     'contacts.apps.ContactsConfig',
     'phonenumber_field',

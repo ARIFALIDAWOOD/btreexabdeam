@@ -9,6 +9,7 @@
 //--//-->   STYLES GENERALES
 ======================================*/
 
+
 body {
   font-family: 'Poppins', sans-serif;
   color: #555555;
@@ -30,7 +31,7 @@ a {
 }
 
 a:hover {
-  color: #00ffff;
+  color: #707070;
   text-decoration: none;
 }
 
@@ -114,6 +115,20 @@ a:hover {
   font-weight: 600;
 }
 
+.logo {
+  height:65px;
+  width:65px;
+  margin-right: 0;
+  margin-left: auto;
+  padding: 0;
+}
+
+.logo1 {
+  height:50px;
+  width:50px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .nav-pills-a.nav-pills .nav-link.active {
   background-color: transparent;
 }
@@ -326,8 +341,8 @@ a:hover {
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.2) 27%,
-    rgba(0, 0, 0, 0.65) 90%
+    rgba(0, 0, 0, 0.1) 27%,
+    rgba(0, 0, 0, 0.2) 90%
   );
 }
 
@@ -522,7 +537,7 @@ a:hover {
 //--//-->   NAVBAR
 ======================================*/
 .navbar {
-  opacity: 0.9;
+  opacity: 0.8;
   text-transform: uppercase;
 }
 .navbar-default {
@@ -870,7 +885,9 @@ a:hover {
 /*======================================
 //--//-->   INTRO
 ======================================*/
-
+.carousel{
+  top:0;
+}
 .intro {
   height: 100vh;
   position: relative;
@@ -947,6 +964,7 @@ a:hover {
   font-weight: 700;
   font-size: 2.8rem;
   text-transform: uppercase;
+  text-align: right;
 }
 
 .intro .intro-subtitle {
@@ -1685,7 +1703,7 @@ footer .credits {
   }
 
   .sinse-box {
-    padding: 1.5rem 2.5rem;
+    padding: 1.5rem 1.5rem;
     bottom: 20px;
   }
 
@@ -1985,7 +2003,7 @@ footer .credits {
 
 @media (max-width: 767px) {
   .text-brand {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 
   .section-t8 {
@@ -2045,7 +2063,20 @@ footer .credits {
   .box-collapse .title-box-d .title-d {
     font-size: 1.3rem;
   }
+  .text-brand{
+    padding-left: 0;
+  }
 }
 ul#menu li {
   display: inline-block;
 }
+
+@media (max-width: 414px){
+  .text-brand{
+    padding-left: 0;  
+  }
+  .navbar-brand{
+    padding-left: 0;
+  }
+}
+

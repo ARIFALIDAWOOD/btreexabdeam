@@ -1,5 +1,5 @@
 <!--/ footer Star /-->
-  <section class="section-footer">
+  <section class="section-footer pt-3 pd-3" style="width:100%;">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-4">
@@ -9,7 +9,9 @@
             </div>
             <div class="w-body-a">
               <p class="w-text-a color-text-a">
-                Brief Description of the company has to be written here.
+                Deamante Properties is an exclusive customer
+                driven property development firm that has been 
+                established by <strong>Architect Zaid Sait.</strong>
               </p>
             </div>
             
@@ -24,7 +26,7 @@
               <div class="w-body-a">
                 <ul class="list-unstyled">
                   <li class="item-list-a">
-                    <i class="fa fa-angle-right"></i> <a href="#">Site Map</a>
+                    <i class="fa fa-angle-right"></i> <a href="{% url 'contact' %}">Site Map</a>
                   </li>
                   <li class="item-list-a">
                     <i class="fa fa-angle-right"></i> <a href="#">Agent Admin</a>
@@ -56,26 +58,23 @@
       </div>
     </div>
   </section>
-  <footer>
-    <div class="container">
+  <footer style="width:100%;margin:0;">
+    <div class="container pt-2 pd-2 mt-0 md-0">
       <div class="row">
         <div class="col-md-12 col-lg-12 ">
           <nav class="nav-footer">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="#">Home</a>
+                <a href="{% url 'index' %}">Home</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">About</a>
+                <a href="{% url 'about' %}">About</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Property</a>
+                <a href="{% url 'all' %}">Properties</a>
               </li>
               <li class="list-inline-item">
-                <a href="#">Blog</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Contact</a>
+                <a href="{% url 'contact' %}">Contact</a>
               </li>
             </ul>
           </nav>
@@ -101,7 +100,7 @@
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
-              <span class="color-a">DeamanteProperties</span> All Rights Reserved.
+              <span class="color-a"> DeamanteProperties-</span><span class="year"></span><br> All Rights Reserved.
             </p>
           </div>
         </div>

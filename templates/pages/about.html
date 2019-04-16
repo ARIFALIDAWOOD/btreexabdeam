@@ -14,7 +14,7 @@
           <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="#">Home</a>
+                <a href="{% url 'index' %}">Home</a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">
                 About
@@ -33,18 +33,21 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="about-img-box">
-            <img src="{% static 'img/slide-about-1.jpg' %}" alt="" class="img-fluid">
+            {% for abt in about %}
+            <img src="{{abt.display_img.url}}" alt="" class="img-fluid">
+            {% endfor %}
           </div>
           <div class="sinse-box">
             <h3 class="sinse-title">Deamante Properties
               <span><p>Living Spaces You'll Fall in Love With</p></span>
-            
           </div>
         </div>
         <div class="col-md-12 section-t8">
           <div class="row">
             <div class="col-md-6 col-lg-5">
-              <img src="{% static 'img/about-2.jpg' %}" alt="" class="img-fluid">
+              {% for abt in about %}
+              <img src="{{abt.ceo_img.url}}" alt="" class="img-fluid">
+              {% endfor %}
             </div>
             <div class="col-lg-2  d-none d-lg-block">
               <div class="title-vertical d-flex justify-content-start">
@@ -53,22 +56,19 @@
             </div>
             <div class="col-md-6 col-lg-5 section-md-t3">
               <div class="title-box-d">
-                <h3 class="title-d">Sed
-                  <span class="color-d">porttitor</span> lectus
-                  <br> nibh.</h3>
+                <h3 class="title-d">A Word from Our
+                  <br>
+                  <span class="color-d">CEO</span> </h3>
               </div>
-              <p class="color-text-a">
-                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget
-                consectetur sed, convallis
-                at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum
-                ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
-                neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+              <p class="color-text-a justify-content  ">
+                Deamante Properties is an exclusive customer driven property development firm that has been established by <strong>Architect Zaid Sait.</strong> With passion for design and in-depth knowledge of Bangalore’s real-estate demography, Demante Properties caters to resident and emigrating population who are in search of a home.
               </p>
               <p class="color-text-a">
-                Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
-                Mauris blandit aliquet
-                elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed,
-                convallis at tellus.
+                We understand that our customer is either home buyer or an investor looking for rental incomes. For this we indulge in intense filtering of various properties that come our way for development. Only the most investment worthy land is finalized for development after verifying all legal and other formalities. After this, we make sure that the property has an upscale and posh design home worthy of the buyers investment.
+              </p>
+              <p class="color-text-a">
+                Our vision is to establish a firm that shall be known for its good quality construction, practical designs for day to day living and cost effective investments.
+                Demante Properties treasures each project like solitaire diamond jewelry. Unique, yet worthy of its shine, we builds homes that will make you smile.
               </p>
             </div>
           </div>
@@ -124,17 +124,18 @@
                   <ul class="list-inline">
                     <li class="list-inline-item">
                       <a href="#" class="link-one">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <i class="fab fa-facebook" aria-hidden="true"></i>
                       </a>
                     </li>
                     <li class="list-inline-item">
                       <a href="#" class="link-one">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
                       </a>
                     </li>
+
                     <li class="list-inline-item">
                       <a href="#" class="link-one">
-                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
                       </a>
                     </li>
                     

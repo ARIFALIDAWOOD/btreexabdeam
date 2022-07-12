@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 #from django.contrib.auth.models import User
-from .models import Contact,Contact_Specific
+from .models import Contact, Contact_Specific
 
 
 def contact_sub(request):
@@ -16,10 +16,12 @@ def contact_sub(request):
         subject = request.POST['subject']
         message = request.POST['message']
         if request.user.is_authenticated:
-          user_id = request.POST['user_id']
-          contact = Contact(name=name,email=email, phone=phone,locality=locality,subject=subject,message=message, user_id=user_id)
+            user_id = request.POST['user_id']
+            contact = Contact(name=name, email=email, phone=phone, locality=locality,
+                              subject=subject, message=message, user_id=user_id)
         else:
-          contact = Contact(name=name,email=email, phone=phone,locality=locality,subject=subject,message=message)
+            contact = Contact(name=name, email=email, phone=phone,
+                              locality=locality, subject=subject, message=message)
 
         contact.save()
 
@@ -31,10 +33,10 @@ def contact_sub(request):
         #   [realtor_email, 'techguyinfo@gmail.com'],
         #   fail_silently=False
         # )
-
         messages.success(
             request, 'Your request has been submitted, an executive will get back to you soon')
         return redirect('contact')
+
 
 def contact_specific(request):
     if request.method == 'POST':
@@ -48,10 +50,12 @@ def contact_specific(request):
         locality = request.POST['locality']
         message = request.POST['message']
         if request.user.is_authenticated:
-          user_id = request.POST['user_id']
-          contact = Contact_Specific(prop=prop,prop_Id=prop_Id,prop_address=prop_address,name=name,email=email, phone=phone,locality=locality,subject=subject,message=message, user_id=user_id)
+            user_id = request.POST['user_id']
+            contact = Contact_Specific(prop=prop, prop_Id=prop_Id, prop_address=prop_address, name=name,
+                                       email=email, phone=phone, locality=locality, subject=subject, message=message, user_id=user_id)
         else:
-          contact = Contact_Specific(prop=prop,prop_Id=prop_Id,prop_address=prop_address,name=name,email=email, phone=phone,locality=locality,subject=subject,message=message)
+            contact = Contact_Specific(prop=prop, prop_Id=prop_Id, prop_address=prop_address, name=name,
+                                       email=email, phone=phone, locality=locality, subject=subject, message=message)
 
         contact.save()
 
@@ -66,4 +70,4 @@ def contact_specific(request):
 
         messages.success(
             request, 'Your request has been submitted, an executive will get back to you soon')
-        return redirect('contact')
+        return redirect('all')

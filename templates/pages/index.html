@@ -53,6 +53,7 @@
 
 {% include 'partials/_alerts.html' %}
   <!--/ News Star /-->
+{% if news %}
   <section class="section-news section-t8">
     <div class="container">
       <div class="row">
@@ -62,7 +63,7 @@
               <h2 class="title-a">Latest News</h2>
             </div>
             <div class="title-link">
-              <a href="blog-grid.html">All News
+              <a href="#">All News
                 <span class="ion-ios-arrow-forward"></span>
               </a>
             </div>
@@ -84,13 +85,13 @@
                 </div>
                 <div class="card-title-b">
                   <h2 class="title-2">
-                    <a href="blog-single.html">{{news.Headlines}}
-                      </a>
+                    <a href="{% url 'all' %}">{{news.Headlines}}
+                    </a>
                   </h2>
                 </div>
-                <div class="card-date">
+                {% comment %} <div class="card-date">
                   <span class="date-b">{{news.list_date}}</span>
-                </div>
+                </div> {% endcomment %}
               </div>
             </div>
           </div>
@@ -104,5 +105,5 @@
 {% endif %}
   </section>
   <!--/ News End /-->
-
+{% endif %}
 {% endblock content %}

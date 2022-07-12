@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
-from contacts.models import Contact,Contact_Specific
+from contacts.models import Contact, Contact_Specific
 # Create your views here.
 
 
@@ -18,7 +18,7 @@ def register(request):
         if password == password2:
             if User.objects.filter(email=email).exists():
                 messages.error(request, 'This email ID is already registered')
-                return redirect('register')
+                return redirect('login')
             else:
                 # looks Good
                 user = User.objects.create_user(
@@ -54,13 +54,15 @@ def login(request):
 
 
 def dashboard(request):
-    user_contacts=Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)
-    specific_contacts=Contact_Specific.objects.order_by('-contact_date').filter(user_id=request.user.id)
-    context={
-        'contacts':user_contacts,
-        'specific_contacts':specific_contacts
+    user_contacts = Contact.objects.order_by(
+        '-contact_date').filter(user_id=request.user.id)
+    specific_contacts = Contact_Specific.objects.order_by(
+        '-contact_date').filter(user_id=request.user.id)
+    context = {
+        'contacts': user_contacts,
+        'specific_contacts': specific_contacts
     }
-    return render(request, 'accounts/dashboard.html',context)
+    return render(request, 'accounts/dashboard.html', context)
 
 
 def logout(request):

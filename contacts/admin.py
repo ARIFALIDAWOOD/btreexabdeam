@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact,Contact_Specific
+from .models import Contact, Contact_Specific
 
 
 class ContactAdmin(admin.ModelAdmin):
@@ -11,7 +11,9 @@ class ContactAdmin(admin.ModelAdmin):
 
 admin.site.register(Contact, ContactAdmin)
 
+
 class ContactSpecificAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'prop', 'prop_Id', 'phone')
+    list_display = ('id', 'name', 'prop', 'prop_Id', 'phone', 'contact_date')
+
 
 admin.site.register(Contact_Specific, ContactSpecificAdmin)

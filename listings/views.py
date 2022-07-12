@@ -79,3 +79,27 @@ class Searchls_cbv(ListView):
         context['title'] = "Your Search Results"
         context['sub'] = "Search with the name of the Property you are looking for"
         return context
+
+
+def brochure(request):
+    name = request.GET['name']
+    ser = Listing.objects.all()  # filter(id=name)
+    # print(name+"Is Being Searched")
+    # print(ser+"Is Being Searched")
+    context = {
+        'search': ser
+    }
+    return render(request, "listings/pdf.html", context=context)
+
+
+class Bro(TemplateView):
+    template_name = "listings/pdf.html"
+    queryset = Listing.objects.all()
+
+    def get_queryset(self, *args, **kwargs):
+        request = self.request
+        print(request.GET)
+        query = request.GET.get('name')
+        if query is not None:
+            return Listing.objects.filter(name__icontains=query)
+        return Listing.objects.none()

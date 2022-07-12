@@ -34,12 +34,9 @@
     </div>
   </div>
 </section>
-    <!--/ Intro Single End /-->
-
-  <!--/ Property Single Star /-->
+<!--/ Intro Single End /-->
 <section class="property-single nav-arrow-b">
 <div class="container">
-  <div class="row">
     <div class="col-sm-12">
       <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
         <div class="carousel-item-b">
@@ -117,6 +114,7 @@
             </div>
           </div>
         </div>
+
         <div class="col-md-7 col-lg-7 section-md-t3">
           <div class="row">
             <div class="col-sm-12">
@@ -138,7 +136,7 @@
             </div>
           </div>
           <div class="amenities-list color-text-a">
-            <ul class="list-a no-margin">
+            <ul class="list-a m-2 p-2">
             {% if object.amen1 %}<li>{{object.amen1}}</li>{% endif %}
             {% if object.amen2 %}<li>{{object.amen2}}</li>{% endif %}
             {% if object.amen3 %}<li>{{object.amen3}}</li>{% endif %}
@@ -147,106 +145,136 @@
             {% if object.amen6 %}<li>{{object.amen6}}</li>{% endif %}
             </ul>
           </div>
-        </div>
-      </div>
-    </div>
-
-  <!--Floor Plans-->
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="title-box-d section-t4">
-          <h3 class="title-d">Floor Plans</h3>
-        </div>
-      </div>
-    </div>
-  <!--Floor Plan arrange-->
-    <div class="container">
-        <div class="row">
-          {% if object.floor_plan4 and object.floor_plan3 and object.floor_plan2 and object.floor_plan1  %}
-          <div class="col-6 p-2">
-            <a href="{{object.floor_plan1.url}}" data-lightbox="home-images">
-            <img src="{{object.floor_plan1.url}}" alt="" class="img-fluid">
-          </div>
-
-          <div class="col-6 p-2">
-            <a href="{{object.floor_plan2.url}}" data-lightbox="home-images">
-            <img src="{{object.floor_plan2.url}}" alt="" class="img-fluid">
-          </div>
-
-          <div class="col-6 p-2">
-            <a href="{{object.floor_plan3.url}}" data-lightbox="home-images">
-            <img src="{{object.floor_plan3.url}}" alt="" class="img-fluid">
-          </div>
-
-          <div class="col-6 p-2">
-            <a href="{{object.floor_plan4.url}}" data-lightbox="home-images">
-            <img src="{{object.floor_plan4.url}}" alt="" class="img-fluid">
-          </div>
-
-          {% elif object.floor_plan3 and object.floor_plan2 and object.floor_plan1  %}
-          <div class="col-12 p-2">
-            <a href="{{object.floor_plan1.url}}" data-lightbox="home-images">
-            <img src="{{object.floor_plan1.url}}" alt="" class="img-fluid">
-          </div>
-
-          <div class="col-6 p-2">
-            <a href="{{object.floor_plan2.url}}" data-lightbox="home-images">
-            <img src="{{object.floor_plan2.url}}" alt="" class="img-fluid">
-          </div>
-
-          <div class="col-6 p-2">
-            <a href="{{object.floor_plan3.url}}" data-lightbox="home-images">
-            <img src="{{object.floor_plan3.url}}" alt="" class="img-fluid">
-          </div>
-
-          {% elif object.floor_plan2 and object.floor_plan1  %}
-          <div class="col-6 p-2">
-            <a href="{{object.floor_plan1.url}}" data-lightbox="home-images">
-            <img src="{{object.floor_plan1.url}}" alt="" class="img-fluid">
-          </div>
-
-          <div class="col-6 p-2">
-            <a href="{{object.floor_plan2.url}}" data-lightbox="home-images">
-            <img src="{{object.floor_plan2.url}}" alt="" class="img-fluid">
-          </div>
-
-          {% elif object.floor_plan1  %}
-          <div class="col-12 p-2">
-            <a href="{{object.floor_plan1.url}}" data-lightbox="home-images">
-            <img src="{{object.floor_plan1.url}}" alt="" class="img-fluid">
-          </div>
-
-          {% endif %}
+          <div class="row section-t3">
+            <div class="col-sm-12">
+              <div class="title-box-d">
+                <h3 class="title-d">Brochure</h3>
+              </div>
             </div>
+          </div>
+
+          <form class="form-a " action="{% url 'brochure' %}" method="GET" role="form">
+          <input type="hidden" name="name" value="{{object.id}}"/>
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-a">View Brochure Here    <i class="far fa-hand-pointer"></i></button>
+          </div>
+          </form>    
+      </div>
+
         </div>
+      </div>
+  </div>
 
+  
+  <!--Floor Plans Section Close-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="title-box-d section-t4">
+        <h3 class="title-d">Floor Plans</h3>
+      </div>
+    </div>
+  </div>
+  <!--Floor Plan arrange-->
+    
+  <div class="row">
+    {% if object.floor_plan4 and object.floor_plan3 and object.floor_plan2 and object.floor_plan1  %}
+    <div class="col-6 p-2">
+      <a href="{{object.floor_plan1.url}}" data-lightbox="home-images">
+      <img src="{{object.floor_plan1.url}}" alt="" class="img-fluid">
+    </div></a>
 
-    <div class="col-md-10 offset-md-1">
-      <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab"
-            aria-controls="pills-video" aria-selected="true">Video</a>
-        </li>
+    <div class="col-6 p-2">
+      <a href="{{object.floor_plan2.url}}" data-lightbox="home-images">
+      <img src="{{object.floor_plan2.url}}" alt="" class="img-fluid">
+    </div></a>
+
+    <div class="col-6 p-2">
+      <a href="{{object.floor_plan3.url}}" data-lightbox="home-images">
+      <img src="{{object.floor_plan3.url}}" alt="" class="img-fluid">
+    </div></a>
+
+    <div class="col-6 p-2">
+      <a href="{{object.floor_plan4.url}}" data-lightbox="home-images">
+      <img src="{{object.floor_plan4.url}}" alt="" class="img-fluid">
+    </div></a>
+
+    {% elif object.floor_plan3 and object.floor_plan2 and object.floor_plan1  %}
+    <div class="col-12 p-2">
+      <a href="{{object.floor_plan1.url}}" data-lightbox="home-images">
+      <img src="{{object.floor_plan1.url}}" alt="" class="img-fluid">
+    </div></a>
+
+    <div class="col-6 p-2">
+      <a href="{{object.floor_plan2.url}}" data-lightbox="home-images">
+      <img src="{{object.floor_plan2.url}}" alt="" class="img-fluid">
+    </div></a>
+
+    <div class="col-6 p-2">
+      <a href="{{object.floor_plan3.url}}" data-lightbox="home-images">
+      <img src="{{object.floor_plan3.url}}" alt="" class="img-fluid">
+    </div></a>
+
+    {% elif object.floor_plan2 and object.floor_plan1  %}
+    <div class="col-6 p-2">
+      <a href="{{object.floor_plan1.url}}" data-lightbox="home-images">
+      <img src="{{object.floor_plan1.url}}" alt="" class="img-fluid">
+    </div></a>
+
+    <div class="col-6 p-2">
+      <a href="{{object.floor_plan2.url}}" data-lightbox="home-images">
+      <img src="{{object.floor_plan2.url}}" alt="" class="img-fluid">
+    </div></a>
+
+    {% elif object.floor_plan1  %}
+    <div class="col-12 p-2">
+      <a href="{{object.floor_plan1.url}}" data-lightbox="home-images">
+      <img src="{{object.floor_plan1.url}}" alt="" class="img-fluid">
+    </div></a>
+
+    {% endif %}
+      </div>
+  </div>
+
+{%if object.video_link or object.map_link%}
+<div class="container">
+  <div class="col-md-10 offset-md-1">
+    <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
+      {%if object.video_link %}
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab"
+          aria-controls="pills-video" aria-selected="true">Video</a>
+      </li>
+        {% endif %}
+        {%if object.map_link %}
         <li class="nav-item">
           <a class="nav-link" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map"
             aria-selected="false">Ubication</a>
         </li>
+        {% endif %}
       </ul>
+      
       <div class="tab-content" id="pills-tabContent">
-        
+       {%if object.video_link %} 
       <div class="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
         <iframe src="{{object.video_link}}" width="100%" height="460" frameborder="0"
           webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
-
+      {% endif %}
+      {%if object.map_link %}
       <div class="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
         <iframe src="{{object.map_link}}"
           width="100%" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
-
-      </div>
-<!--/ Property Single End /-->
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %} 
+   
+<!--/REVIEWS/-->
 {% if reviews %}
+<div class="container">
 <div class="row">
       <div class="col-sm-12">
         <div class="title-box-d section-t4">
@@ -255,28 +283,29 @@
   </div>
 </div>
 
-<div class="col-md-12 offset-md-1 col-lg-10 offset-lg-1 pt-2">
-      
-    <div class="box-comments">
-      <ul class="list-comments">
-    {% for rev in reviews  %}
+<div class="col-md-12 offset-md-1 col-lg-10 offset-lg-1 pt-2"> 
+  <div class="box-comments">
+    <ul class="list-comments">
+     {% for rev in reviews  %}
         <li>
-              <div class="comment-avatar">
-                <img src="{{rev.img_disp.url}}" alt="">
-              </div>
-              <div class="comment-details">
-                <h4 class="comment-author">{{rev.name}}</h4>
-                <span>{{listing.name}}</span>
-                <p class="comment-description">
-                  {{rev.review}}
-                </p>
-              </div>
+          <div class="comment-avatar">
+            <img src="{{rev.img_disp.url}}" alt="">
+          </div>
+          <div class="comment-details">
+            <h4 class="comment-author">{{rev.name}}</h4>
+            <span>{{listing.name}}</span>
+            <p class="comment-description">
+              {{rev.review}}
+            </p>
+          </div>
         </li>
     {% endfor %}
-      </ul>
-    </div>
+    </ul>
   </div>
+</div>
+</div>
 {% endif %}
-</section>
 {%include 'partials/_enquiry.html'%}
+
+</section>
 {% endblock content %}
